@@ -1,3 +1,79 @@
+# Formas de criar o projeto
+
+## Projeto com Next Js
+para criar um projeto com next js usa-se o comando:
+
+```bash
+npx create-next-app
+# or
+yarn create next-app
+```
+
+Se você quiser iniciar o projeto com typescript use  `--typescript` :
+
+```bash
+npx create-next-app --typescript
+# or
+yarn create next-app --typescript
+```
+
+### Projeto com Next Js + Styled Components
+para criar um projeto com next js + Styled Components usa-se o comando:
+
+```bash
+npx create-next-app --example with-styled-components
+# or
+yarn create next-app --example with-styled-components
+```
+
+Se você quiser iniciar o projeto com typescript use  `--typescript` :
+
+```bash
+npx create-next-app --typescript --example with-styled-components
+# or
+yarn create next-app --typescript --example with-styled-components
+```
+
+## Para o Deploy
+Para o Deploy coloque no package.json a linha export:
+
+```json
+"scripts": {
+	"dev": "next",
+	"build": "next build",
+	"start": "next start",
+	"export": "next export"
+},
+```
+
+Assim ele criará a pasta out com o html estático pronto para uso
+
+### Vídeo explicando bem esse início
+[https://youtu.be/Ij-B0Yiizyw]
+
+## Para Deploy com gh-pages
+instale o gh-pages
+no package.json deixe desta forma
+
+```
+"scripts": {
+	"dev": "next",
+	"build": "next build",
+	"start": "next start",
+	"export": "next export",
+	"predeploy": "next build && next export",
+	"deploy": "gh-pages -d out"
+},
+```
+
+
+
+
+
+
+
+
+# ------>>>>>>>>> Abaixo daqui está o readme original que vem no projeto quando criado
 # Example app with styled-components
 
 This example features how you use a different styling solution than [styled-jsx](https://github.com/zeit/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
